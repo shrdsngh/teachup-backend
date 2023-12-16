@@ -18,7 +18,7 @@ const url = process.env.URL;
 app.use(express.json());
 app.use(
   cors({
-    origin: "http://localhost:3000", // Replace with your frontend URL
+    origin: "*", // Replace with your frontend URL
     methods: ["GET", "POST"], // Add methods you're using
     allowedHeaders: ["Content-Type", "Authorization"], // Add headers needed
   })
