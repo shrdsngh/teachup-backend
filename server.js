@@ -16,7 +16,13 @@ const url = process.env.URL;
 
 // Middlewares
 app.use(express.json());
-app.use(cors());
+app.use(
+  cors({
+    origin: "http://localhost:3000", // Replace with your frontend URL
+    methods: ["GET", "POST"], // Add methods you're using
+    allowedHeaders: ["Content-Type", "Authorization"], // Add headers needed
+  })
+);
 
 // Connecting to mongoDB
 mongoose
